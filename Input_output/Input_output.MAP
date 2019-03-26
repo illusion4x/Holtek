@@ -1,75 +1,79 @@
 
 连接器　版本8.7.7.181224
-Input Object File: E:\Github\Holtek\Input_output\INPUT_OUTPUT.OBJ
-Input Object File: E:\Github\Holtek\Input_output\STARTUP1_L.OBJ
+Input Object File: Y:\Documents\GitHub\Holtek\Input_output\INPUT_OUTPUT.OBJ
+Input Object File: Y:\Documents\GitHub\Holtek\Input_output\STARTUP1_L.OBJ
 
-Input Library File: D:\Program Files (x86)\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB
-Input Library File: D:\Program Files (x86)\HT-IDE3000V7.x\LIB\v3_tabrd_mrsc.lib
+Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB
+Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V7.x\LIB\v3_tabrd_mrsc.lib
 
 
      Bank    Start     End      Length     Class    AvgIns    Name
-     00h     0000h     0000h    0001h      CODE               @code (E:\Github\Holtek\Input_output\INPUT_OUTPUT.OBJ)
-     00h     0001h     0001h    0001h      CODE               @start (E:\Github\Holtek\Input_output\INPUT_OUTPUT.OBJ)
-     00h     0002h     0011h    0010h      CODE               _delay_ms (E:\Github\Holtek\Input_output\INPUT_OUTPUT.OBJ)
-     00h     0012h     0028h    0017h      CODE               _main (E:\Github\Holtek\Input_output\INPUT_OUTPUT.OBJ)
-     00h     0029h     0036h    000eh      CODE               _builtin_holtek_delay_isr00 (D:\Program Files (x86)\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB)
-     00h     0080h     0080h    0001h      DATA     3         @data_ra (D:\Program Files (x86)\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0000h     0000h    0001h      CODE               @code (Y:\Documents\GitHub\Holtek\Input_output\INPUT_OUTPUT.OBJ)
+     00h     0001h     0004h    0004h      CODE               @ROMDATA_BASE (Y:\Documents\GitHub\Holtek\Input_output\STARTUP1_L.OBJ)
+     00h     000ch     000fh    0004h      CODE               @t0isr_code (Y:\Documents\GitHub\Holtek\Input_output\INPUT_OUTPUT.OBJ)
+     00h     0010h     004ah    003bh      CODE               @start (Y:\Documents\GitHub\Holtek\Input_output\INPUT_OUTPUT.OBJ)
+     00h     004bh     005fh    0015h      CODE               _main (Y:\Documents\GitHub\Holtek\Input_output\INPUT_OUTPUT.OBJ)
+     00h     0060h     007eh    001fh      CODE               _t0isr (Y:\Documents\GitHub\Holtek\Input_output\INPUT_OUTPUT.OBJ)
+     00h     0080h     0081h    0002h      DATA     3         @HCCINIT (Y:\Documents\GitHub\Holtek\Input_output\INPUT_OUTPUT.OBJ)
+     00h     0082h     0082h    0001h      DATA     2         @data_r10c (isr:ra~rh)
+     00h     0083h     0083h    0001h      DATA     2         @data_r20c (isr:ra~rh)
+     00h     0084h     0084h    0001h      DATA     3         @data_rb0c (isr:ra~rh)
+     00h     0085h     0085h    0001h      DATA     3         @data_rc0c (isr:ra~rh)
+     00h     0086h     0086h    0001h      DATA     3         @data_ra0c (isr:ra~rh)
 
      Local Sections
 
      Bank    Start     End      Length     Class    AvgIns    Name
-     00h     0084h     0084h    0000h      LOCAL    0         @dummy (E:\Github\Holtek\Input_output\INPUT_OUTPUT.OBJ)
-     00h     0084h     0084h    0000h      LOCAL    0         _main (E:\Github\Holtek\Input_output\INPUT_OUTPUT.OBJ)
-     00h     0082h     0083h    0002h      LOCAL    3         _delay_ms (E:\Github\Holtek\Input_output\INPUT_OUTPUT.OBJ)
-     00h     0081h     0081h    0001h      LOCAL    2         _builtin_holtek_delay_isr00 (D:\Program Files (x86)\HT-IDE3000V7.x\LIB\LIBHOLTEKGCC.LIB)
+     00h     0087h     0087h    0000h      LOCAL    0         @dummy (Y:\Documents\GitHub\Holtek\Input_output\INPUT_OUTPUT.OBJ)
+     00h     0087h     0087h    0000h      LOCAL    0         _main (Y:\Documents\GitHub\Holtek\Input_output\INPUT_OUTPUT.OBJ)
+     00h     0087h     0087h    0000h      LOCAL    0         @dummy12 (Y:\Documents\GitHub\Holtek\Input_output\INPUT_OUTPUT.OBJ)
+     00h     0087h     0087h    0000h      LOCAL    0         _t0isr (Y:\Documents\GitHub\Holtek\Input_output\INPUT_OUTPUT.OBJ)
 
      Public Symbols Information
      Address            Public by Name
-     002eh              __DELAYY0_isr00
-     002dh              __DELAYY1_isr00
-     002ch              __DELAYY2_isr00
-     002bh              __DELAYY3_isr00
-     002ah              __DELAYY4_isr00
-     0029h              __DELAYY5_isr00
-     0081h              _builtin_holtek_delay_isr00_2
-     0002h              _delay_ms
-     0082h              _delay_ms_2
-     0012h              _main
-     0080h              ra
+     004bh              _main
+     0060h              _t0isr
+     0082h              r10c
+     0083h              r20c
+     0086h              ra0c
+     0084h              rb0c
+     0085h              rc0c
+     0000h              startup_value_1
 
      Address            Public by Value
-     0002h              _delay_ms
-     0012h              _main
-     0029h              __DELAYY5_isr00
-     002ah              __DELAYY4_isr00
-     002bh              __DELAYY3_isr00
-     002ch              __DELAYY2_isr00
-     002dh              __DELAYY1_isr00
-     002eh              __DELAYY0_isr00
-     0080h              ra
-     0081h              _builtin_holtek_delay_isr00_2
-     0082h              _delay_ms_2
+     0000h              startup_value_1
+     004bh              _main
+     0060h              _t0isr
+     0082h              r10c
+     0083h              r20c
+     0084h              rb0c
+     0085h              rc0c
+     0086h              ra0c
 
 
 ROM Usage Statistics
      Size      Used     Percentage
-     1000h     0037h    1%
+     1000h     0078h    2%
 
 RAM Usage Statistics
     Bank      Size      Used     Percentage
-     00h       0080h     0004h    3%
+     00h       0080h     0007h    5%
      01h       0080h     0000h    0%
-     Total     0100h     0004h    1%
+     Total     0100h     0007h    2%
 
 Use Stack Count
-_main: 2
+_delay_ms: 1
+_main: 0
+_t0isr: 0
 
 Call Tree
+    _delay_ms
+        _builtin_holtek_delay_isr00 (0)
     @dummy
         _main (0)
-            _delay_ms (1)
-                _builtin_holtek_delay_isr00 (2)
+    @dummy12
+        _t0isr (0)
 
-HLINK : 程序的开始执行点在程序段'@code'（地址0）。定义在'E:\Github\Holtek\Input_output\INPUT_OUTPUT.OBJ' 文件中
+HLINK : 程序的开始执行点在程序段'@code'（地址0）。定义在'Y:\Documents\GitHub\Holtek\Input_output\INPUT_OUTPUT.OBJ' 文件中
 
 错误总数 : 0  警告总数 : 0
