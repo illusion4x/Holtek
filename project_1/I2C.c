@@ -7,16 +7,19 @@
 
 u8 I2C_R_Byte(u8 Decive_addr,u8 Reg_addr){
 	
+	Device_addr
 	//start 
 	SDA = 1;
 	SCL = 1;
-	_delay();
+	_delay();//2us
 	SDA = 0;
-	_delay();
+	_delay();//2us
 	SCL = 0;
 	
 	//Device addr
-	for(mask = 0x80; mask != 0;)
+	for(mask = 0x80; mask != 0;mask>>1){
+		
+	}
 	
 	
 	
