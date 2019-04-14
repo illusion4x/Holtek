@@ -4,7 +4,7 @@ void main(){
 	
 }
 
-
+void 
 
 
 void key_process(){
@@ -12,18 +12,12 @@ void key_process(){
 	switch(mode){
 		case normal_mode :
 			if(key_heat_up){
-				if(temp_real<95){
-					
-				}
-				else{
-					
-				}//heat_up
+				heat_flag = !heat_flag;
 				key_heat_up = 0;
 			}
 			
 			if(key_cool_down){
-				if(temp_real>4&&)//interval 5min
-				//cool down
+				cool_flag = !cool_flag;
 				key_cool_down = 0;
 			}
 				
@@ -33,8 +27,9 @@ void key_process(){
 			}
 
 			if(key_heat_2){
-		
+				heat_2_flag = !heat_2_flag;
 			}
+			
 			break;
 
 		case hot_set_mode:

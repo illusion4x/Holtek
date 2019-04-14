@@ -1,3 +1,9 @@
+#define _MAIN_H
+
+#ifndef _MAIN_H
+	#define _MAIN_H
+
+
 
 #define normal_mode 0
 #define hot_set_mode 1
@@ -41,19 +47,19 @@ typedef union{
 
 key_group key_group1;
 
-#define key_group1.B.b1 key_heat_up
-#define key_group1.B.b2 key_cool_down
-#define key_group1.B.b3 key_set
-#define key_group1.B.b4 key_ok
-#define key_group1.B.b5 key_heat_2
+#define  key_heat_up      key_group1.B.b1
+#define  key_cool_down    key_group1.B.b2
+#define  key_set          key_group1.B.b3
+#define  key_ok           key_group1.B.b4
+#define  key_heat_2       key_group1.B.b5 
 
 typedef struct{
 	u8 hot;
 	u8 cool;
 }temp_struct;
 
-time_struct temp_real;//2B
-time_struct temp_set;//2B
+temp_struct temp_real;//2B
+temp_struct temp_set;//2B
 
 typedef struct {	
 	u8 hour;
@@ -65,6 +71,21 @@ time_struct time_on;//2B
 time_struct time_off;//2B
 
 u8 time_setting;
+
+bit heat_flag;
+bit cool_flag;
+
+
+#define heat_pin 
+#define cool_pin
+#define temp_hot_pin
+#define temp_cool_pin
+#define buzzer_pin 
+
+
+
+
+
 
 
 

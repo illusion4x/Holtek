@@ -1,6 +1,3 @@
-//display special image
+//vis I2C
 
-//显示中央水滴
-
-//显示两侧加热制冷动画
-
+u8 
