@@ -31,8 +31,8 @@
 #define INT
 
 void TM1730_R_key();
-void TM1730_W_RAM(u8 RAM_addr,u8 data);//cmd = 0, data = 1
-void TM1730_W_CMD(u8 CMD);
+void TM1730_W_RAM(unsigned char RAM_addr,unsigned char data);//cmd = 0, data = 1
+void TM1730_W_CMD(unsigned char CMD);
 
 	
 #endif	

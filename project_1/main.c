@@ -8,7 +8,8 @@ void main(){
 	_eadi = 1; // open ADC_isr
 	_eti =  1; // open TM_isr
 	_emi = 1; // open global isr
-
+	
+	
 
 
 
@@ -21,9 +22,9 @@ void
 
 
 void key_process(){
-	if(INT_pin){
-		key_group1 = TM1730_R_key();
-	}
+	
+	key_group1 = TM1730_R_key();
+	
 	switch(mode){
 		case normal_mode :
 			if(key_heat_up){
