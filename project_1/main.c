@@ -2,13 +2,28 @@
 
 void main(){
 	
+	//adc part
+	_acsr = ADC_speed_2fast;
+	_pcr1 = 1; // set PB0-PB1 to AN0-AN1
+	_eadi = 1; // open ADC_isr
+	_eti =  1; // open TM_isr
+	_emi = 1; // open global isr
+
+
+
+
+	while(1){
+
+	}
 }
 
 void 
 
 
 void key_process(){
-	
+	if(INT_pin){
+		key_group1 = TM1730_R_key();
+	}
 	switch(mode){
 		case normal_mode :
 			if(key_heat_up){
@@ -285,3 +300,12 @@ void key_process(){
 	}
 }
 
+
+
+void __attribute((interrupt(0x08))) ISR_tmr0 (void){
+
+}
+
+void __attribute((interrupt(0x0C))) ISR_adc (void){
+
+}
