@@ -1,5 +1,5 @@
-#ifndef _MAIN_H
-	#define _MAIN_H
+#ifndef _CONFIG_H
+	#define _CONFIG_H
 #include <ht46F47.h>
 #define normal_mode 0
 #define hot_set_mode 1
