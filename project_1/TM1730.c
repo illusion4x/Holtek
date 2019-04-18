@@ -11,9 +11,9 @@ void TM1730_W_CMD(unsigned char CMD){
 	//start 
 	SDA = 1;
 	SCL = 1;
-	_nop();_nop();_nop();
+	delay_nop();
 	SDA = 0;
-	_nop();_nop();_nop();
+	delay_nop();
 	SCL = 0;
 
 	//seek device
@@ -24,14 +24,14 @@ void TM1730_W_CMD(unsigned char CMD){
 			SDA = 0;
 
 		SCL = 1;
-		_nop();_nop();_nop();
+		delay_nop();
 		SCL = 0;
 	}
 
 	SDA = 1;
-	_nop();_nop();_nop();
+	delay_nop();
 	SCL = 1;
-	_nop();_nop();_nop();
+	delay_nop();
 	SCL = 0;
 
 	for(mask = 0x80; mask != 0; mask>>1){
@@ -41,21 +41,21 @@ void TM1730_W_CMD(unsigned char CMD){
 			SDA = 0;
 
 		SCL = 1;
-		_nop();_nop();_nop();
+		delay_nop();
 		SCL = 0;
 	}
 
 	SDA = 1;
-	_nop();_nop();_nop();
+	delay_nop();
 	SCL = 1;
-	_nop();_nop();_nop();
+	delay_nop();
 	
     // stop
 	SCL = 0;
 	SDA = 0;
-	_nop();_nop();_nop();
+	delay_nop();
 	SCL = 1;
-	_nop();_nop();_nop();
+	delay_nop();
 	SDA = 1;
 
 }
@@ -67,9 +67,9 @@ void TM1730_W_RAM(unsigned char RAM_addr,unsigned char data){
 	//start 
 	SDA = 1;
 	SCL = 1;
-	_nop();_nop();_nop();
+	delay_nop();
 	SDA = 0;
-	_nop();_nop();_nop();
+	delay_nop();
 	SCL = 0;
 
 	//seek device
@@ -80,14 +80,14 @@ void TM1730_W_RAM(unsigned char RAM_addr,unsigned char data){
 			SDA = 0;
 
 		SCL = 1;
-		_nop();_nop();_nop();
+		delay_nop();
 		SCL = 0;
 	}
 
 	SDA = 1;
-	_nop();_nop();_nop();
+	delay_nop();
 	SCL = 1;
-	_nop();_nop();_nop();
+	delay_nop();
 	SCL = 0;
 
 	//write RAM addr
@@ -98,14 +98,14 @@ void TM1730_W_RAM(unsigned char RAM_addr,unsigned char data){
 			SDA = 0;
 
 		SCL = 1;
-		_nop();_nop();_nop();
+		delay_nop();
 		SCL = 0;
 	}
 
 	SDA = 1;
-	_nop();_nop();_nop();
+	delay_nop();
 	SCL = 1;
-	_nop();_nop();_nop();
+	delay_nop();
 
 	// write data
 	for(mask = 0x80; mask != 0; mask>>1){
@@ -115,22 +115,22 @@ void TM1730_W_RAM(unsigned char RAM_addr,unsigned char data){
 			SDA = 0;
 
 		SCL = 1;
-		_nop();_nop();_nop();
+		delay_nop();
 		SCL = 0;
 	}
 
 	SDA = 1;
-	_nop();_nop();_nop();
+	delay_nop();
 	SCL = 1;
-	_nop();_nop();_nop();
+	delay_nop();
 
 	
     // stop
 	SCL = 0;
 	SDA = 0;
-	_nop();_nop();_nop();
+	delay_nop();
 	SCL = 1;
-	_nop();_nop();_nop();
+	delay_nop();
 	SDA = 1;
 
 }
@@ -142,9 +142,9 @@ unsigned char TM1730_R_key(){
 	//start 
 	SDA = 1;
 	SCL = 1;
-	_nop();_nop();_nop();
+	delay_nop();
 	SDA = 0;
-	_nop();_nop();_nop();
+	delay_nop();
 	SCL = 0;
 
 	//seek device
@@ -155,14 +155,14 @@ unsigned char TM1730_R_key(){
 			SDA = 0;
 
 		SCL = 1;
-		_nop();_nop();_nop();
+		delay_nop();
 		SCL = 0;
 	}
 
 	SDA = 1;
-	_nop();_nop();_nop();
+	delay_nop();
 	SCL = 1;
-	_nop();_nop();_nop();
+	delay_nop();
 	SCL = 0;
 
 	//write RAM addr
@@ -173,32 +173,32 @@ unsigned char TM1730_R_key(){
 			SDA = 0;
 
 		SCL = 1;
-		_nop();_nop();_nop();
+		delay_nop();
 		SCL = 0;
 	}
 
 	SDA = 1;
-	_nop();_nop();_nop();
+	delay_nop();
 	SCL = 1;
-	_nop();_nop();_nop();
+	delay_nop();
 
 
 	// stop
 	SCL = 0;
 	SDA = 0;
-	_nop();_nop();_nop();
+	delay_nop();
 	SCL = 1;
-	_nop();_nop();_nop();
+	delay_nop();
 	SDA = 1;
 	
-	_nop();_nop();_nop();
+	delay_nop();
 
 	//start 
 	SDA = 1;
 	SCL = 1;
-	_nop();_nop();_nop();
+	delay_nop();
 	SDA = 0;
-	_nop();_nop();_nop();
+	delay_nop();
 	SCL = 0;
 
 	//seek device
@@ -209,83 +209,83 @@ unsigned char TM1730_R_key(){
 			SDA = 0;
 
 		SCL = 1;
-		_nop();_nop();_nop();
+		delay_nop();
 		SCL = 0;
 	}
 
 	SDA = 1;
-	_nop();_nop();_nop();
+	delay_nop();
 	SCL = 1;
-	_nop();_nop();_nop();
+	delay_nop();
 	SCL = 0;
 
 	//0x20 Read
 	for(mask = 0x80; mask != 0; mask>>1){
-		_nop();_nop();_nop();
+		delay_nop();
 		SCL = 1;
 		if(SDA == 0)
 			dat &= ~mask;
 		else
 			dat |= mask;;
 
-		_nop();_nop();_nop();
+		delay_nop();
 		SCL = 0;
 	}
 
 	//send ack 
 	SDA = 0;
-	_nop();_nop();_nop();
+	delay_nop();
 	SCL = 1;
-	_nop();_nop();_nop();
+	delay_nop();
 	SCL = 0;
 	//0x21
 	for(mask = 0x80; mask != 0; mask>>1){
-		_nop();_nop();_nop();
+		delay_nop();
 		SCL = 1;
 		/*if(SDA == 0)
 			dat &= ~mask;
 		else
 			dat |= mask;;
 		*/
-		_nop();_nop();_nop();
+		delay_nop();
 		SCL = 0;
 
 	}
 	
 	//send ack 
 	SDA = 0;
-	_nop();_nop();_nop();
+	delay_nop();
 	SCL = 1;
-	_nop();_nop();_nop();
+	delay_nop();
 	SCL = 0;
 
 	//0x22
 	for(mask = 0x80; mask != 0; mask>>1){
-		_nop();_nop();_nop();
+		delay_nop();
 		SCL = 1;
 		/*if(SDA == 0)
 			dat &= ~mask;
 		else
 			dat |= mask;;
 		*/
-		_nop();_nop();_nop();
+		delay_nop();
 		SCL = 0;
 	}
 
 	//send ack 
 	SDA = 0;
-	_nop();_nop();_nop();
+	delay_nop();
 	SCL = 1;
-	_nop();_nop();_nop();
+	delay_nop();
 	SCL = 0;
 
 
     // stop
 	SCL = 0;
 	SDA = 0;
-	_nop();_nop();_nop();
+	delay_nop();
 	SCL = 1;
-	_nop();_nop();_nop();
+	delay_nop();
 	SDA = 1;
 
 	return dat;

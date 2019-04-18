@@ -1,6 +1,10 @@
 #ifndef _CONFIG_H
 	#define _CONFIG_H
-#include <ht46F47.h>
+
+	#include <ht46F47.h>
+
+#define OSC 4000000 //4M
+
 #define normal_mode 0
 #define hot_set_mode 1
 #define cool_set_mod 2
@@ -10,7 +14,14 @@
 #define time_on_min_set_mode 6
 #define time_off_hour_set_mode 7
 #define time_off_min_set_mode 8
+#define sunday_mode 9
 
+#define temp_set_hot_addr
+#define temp_set_cool_addr
+#define time_on_hour_addr
+#define time_on_min_addr
+#define time_off_hour_addr
+#define time_off_min_addr
 //the definition of LCD display ram address 
 
 
@@ -34,9 +45,9 @@ typedef struct{
 typedef union{
 	bits B;
 	unsigned char data;
-}key_group;
+}Byte_group;
 
-key_group key_group1;
+Byte_group key_group1;
 
 #define  key_heat_up      key_group1.B.b1
 #define  key_cool_down    key_group1.B.b2
@@ -61,7 +72,9 @@ time_struct time_real;//2B
 time_struct time_on;//2B
 time_struct time_off;//2B
 
-unsigned char time_setting;
+unsigned char set_time;
+
+
 
 bit heat_flag;
 bit cool_flag;

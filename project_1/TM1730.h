@@ -1,6 +1,8 @@
 
 #ifndef _TM1730_H
 	#define _TM1730_H
+
+	#include <ht46F47.h>
 	
 #define TM1730_addr_W 0xE6 // contain the R/W bit
 #define TM1730_addr_R 0xE7
@@ -29,6 +31,8 @@
 #define SDA 
 #define SCL
 #define INT
+
+#define delay_nop(); _nop();_nop();_nop();
 
 void TM1730_R_key();
 void TM1730_W_RAM(unsigned char RAM_addr,unsigned char data);//cmd = 0, data = 1

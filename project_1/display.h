@@ -1,7 +1,7 @@
 #ifndef _DISPLAY_H
 #define _DISPLAY_H
 
-#include 'config.h'
+	#include 'config.h'
 
 #define cool_pattern 0x80
 #define 
@@ -9,7 +9,18 @@
 #define 
 #define 
 
+//Define the display area 
+const unsigned char num_coding_67910[10] = {0x77,0x24,0x5D,0x6D,0x2E,0X6B,0xFB,0x25,0xEF,0x2F};//0-9
+const unsigned char num_coding_1234[10] = {0x6E,0xBC,0xD6,0xDA,0x78,0xBA,0xBE,0xC8,0xFE,0xF8};//0-9
 
-extern working_mode 
+
+//inital display RAM
+
+
+
+#define blink_time 
+#define blink_flag;
+
+
 
 #endif // !_DISPLAY_H
