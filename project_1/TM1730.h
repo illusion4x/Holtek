@@ -3,6 +3,7 @@
 	#define _TM1730_H
 
 	#include <ht46F47.h>
+	#include 'I2C.h'
 	
 #define TM1730_addr_W 0xE6 // contain the R/W bit
 #define TM1730_addr_R 0xE7
@@ -27,16 +28,9 @@
 
 #define key_scan 0xF8
 
-//define pin
-#define SDA 
-#define SCL
-#define INT
-
-#define delay_nop(); _nop();_nop();_nop();
-
-void TM1730_R_key();
-void TM1730_W_RAM(unsigned char RAM_addr,unsigned char data);//cmd = 0, data = 1
-void TM1730_W_CMD(unsigned char CMD);
+void TM1730_W_cmd(unsigned char cmd);
+void TM1730_W_byte(unsigned char reg_addr,unsigned char dat );
+void TM1730_W_page(unsigned char start_reg,unsigned char end_reg, unsigned char *dat );
 
 	
 #endif	

@@ -1,62 +1,20 @@
 #include 'TM1730.h'
 
+void TM1730_W_cmd(unsigned char cmd){
+  
+   	I2C_start();
+   	if(I2C_seek_device(TM1730_addr_W)){
+   		I2C_W(cmd);
+   	}
+   	I2C_stop();
 
-//via I2C
-//all no ACK
-//all no sub-fun
+}
 
-void TM1730_W_CMD(unsigned char CMD){
-    unsigned char  mask ;
-   
-	//start 
-	SDA = 1;
-	SCL = 1;
-	delay_nop();
-	SDA = 0;
-	delay_nop();
-	SCL = 0;
+void TM1730_W_byte(){
 
-	//seek device
-	for(mask = 0x80; mask != 0; mask>>1){
-		if(TM1730_addr_W && 0x80)
-			SDA = 1;
-		else 
-			SDA = 0;
+}
 
-		SCL = 1;
-		delay_nop();
-		SCL = 0;
-	}
-
-	SDA = 1;
-	delay_nop();
-	SCL = 1;
-	delay_nop();
-	SCL = 0;
-
-	for(mask = 0x80; mask != 0; mask>>1){
-		if(CMD && 0x80)
-			SDA = 1;
-		else 
-			SDA = 0;
-
-		SCL = 1;
-		delay_nop();
-		SCL = 0;
-	}
-
-	SDA = 1;
-	delay_nop();
-	SCL = 1;
-	delay_nop();
-	
-    // stop
-	SCL = 0;
-	SDA = 0;
-	delay_nop();
-	SCL = 1;
-	delay_nop();
-	SDA = 1;
+void TM1730_W_page(){
 
 }
 

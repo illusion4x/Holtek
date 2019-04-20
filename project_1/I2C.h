@@ -19,8 +19,8 @@ in this case, it acted as byte write or read
 void I2C_start();
 void I2C_stop();
 bit I2C_seek_device(unsigned char device_addr);
-bit I2C_W(unsigned char data);
+bit I2C_W(unsigned char dat);
 unsigned char I2C_R();
 
 
-	#endif
+#endif
