@@ -1,4 +1,5 @@
-
+//version 1.0
+//it do not care if it is success or not
 #ifndef _TM1730_H
 	#define _TM1730_H
 
@@ -31,6 +32,6 @@
 void TM1730_W_cmd(unsigned char cmd);
 void TM1730_W_byte(unsigned char reg_addr,unsigned char dat );
 void TM1730_W_page(unsigned char start_reg,unsigned char end_reg, unsigned char *dat );
-
+unsigned char TM1730_R_key();//typical for the key group
 	
 #endif	
