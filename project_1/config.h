@@ -16,12 +16,7 @@
 #define time_off_min_set_mode 8
 #define sunday_mode 9
 
-#define temp_set_hot_addr
-#define temp_set_cool_addr
-#define time_on_hour_addr
-#define time_on_min_addr
-#define time_off_hour_addr
-#define time_off_min_addr
+
 //the definition of LCD display ram address 
 
 
@@ -48,12 +43,20 @@ typedef union{
 }Byte_group;
 
 Byte_group key_group1;
+Byte_group key_group1_buf;
+Byte_group key_act;
 
 #define  key_heat_up      key_group1.B.b1
 #define  key_cool_down    key_group1.B.b2
 #define  key_set          key_group1.B.b3
 #define  key_ok           key_group1.B.b4
 #define  key_heat_2       key_group1.B.b5 
+
+#define  key_heat_buf      	  key_group1_buf.B.b1
+#define  key_cool_down_buf    key_group1_buf.B.b2
+#define  key_set_buf          key_group1_buf.B.b3
+#define  key_ok_buf           key_group1_buf.B.b4
+#define  key_heat_2_buf       key_group1_buf.B.b5 
 
 typedef struct{
 	unsigned char hot;
@@ -74,11 +77,16 @@ time_struct time_off;//2B
 
 unsigned char set_time;
 
+unsigned char run_time_1s ;
 
 
 bit heat_flag;
 bit cool_flag;
 
+unsigned char key_heat_2_time;
+bit blink_flag ;
+
+#define time_sunday_mode 10
 
 #define heat_pin
 #define cool_pin

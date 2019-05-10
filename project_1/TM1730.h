@@ -12,8 +12,10 @@
 #define key_addr1 0x20 
 #define key_addr2 0x21
 #define key_addr3 0x22
-//define CMD
 
+#define int_addr 0x30
+
+//define CMD 
 #define normal_on   0x83
 #define normal_off  0x81
 #define idle_on     0x82
@@ -27,11 +29,13 @@
 #define dis_16_8_int_1 0xA7
 #define dis_16_8_com_0 0xA5
 
-#define key_scan 0xF8
+#define key_scan 0xF8 
+//+1 will make it slower
 
 void TM1730_W_cmd(unsigned char cmd);
 void TM1730_W_byte(unsigned char reg_addr,unsigned char dat );
 void TM1730_W_page(unsigned char start_reg,unsigned char end_reg, unsigned char *dat );
 unsigned char TM1730_R_key();//typical for the key group
+unsigned char TM1730_R_int();
 	
 #endif	

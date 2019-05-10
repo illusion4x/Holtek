@@ -1,39 +1,36 @@
-//this file define function to display 
+ //this file define function to display 
 #include 'display.h'
 
 Byte_group dis_buf[12] ;
 
+//display center parton
+void dis_1(){
+	if(area_2_blink_buf! =  blink_flag){
+		if(n >= 5){
+			n = 0;
+			dis_buf[area_2_addr] = dis_buf[area_2_addr] & (0x07);
+		}
+		else{
+			area_2_blink_buf = blink_flag;
+			dis_buf[area_2_addr] = dis_buf[area_2_addr] | (0x8<<n);
+			n++;
+		}
 
+	}
+}
 
+/*
 //when normal display
-void display(){
+void dis_ram(){
 	
-	if(mode == hot_set_mode){
-
+	siwtch(mode){
+		case normal_mode:
+		case hot_set_mode:
+		case cool_set_mod:
 	}
-	else{
-
-	}
-
-	if(mode == cool_set_mode){
-
-	}
-	else{
-
-	}
-
-	if(mode == time_real_hour_set_mode){
-
-	}
-	else if{
-
-	}
-
-	
-
-
-
-
 
 
 }
+
+*/
+

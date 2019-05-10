@@ -12,7 +12,7 @@ void main(){
 	_emi = 1; // open global isr
 	
 
-	//set TM to 1ms
+	//set TM to 4ms
 	_tm1 = 1; //set to timer mode 
 	_psc2 = 1;
 	_psc1 = 1; //prescaler should be set to 1/64 psc = 110
@@ -28,37 +28,53 @@ void main(){
 	}
 }
 
-void 
 
 
 void key_process(){
 	
 	key_group1 = TM1730_R_key();
-
-	if(key_heat_up){//key_time 
-
-	}
 	
 	switch(mode){
 		case normal_mode :
-			if(key_heat_up){
-				heat_flag = !heat_flag;
-				key_heat_up = 0;
+			if(key_heat_up != key_heat_up_buf){
+				key_heat_up_buf = key_heat_up;
+				if(key_heat_up){
+					heat_flag = !heat_flag;
+				}
 			}
 			
-			if(key_cool_down){
-				cool_flag = !cool_flag;
-				key_cool_down = 0;
+			if(key_cool_down != key_cool_down_buf){
+				key_cool_down_buf = key_cool_down;
+				if(key_cool_down){
+					cool_flag = !cool_flag;
+				}
 			}
 				
-			if(key_set){
-				mode = 1;
-				key_set = 0;
+			if(key_set != key_set_buf){
+				key_set_buf = key_set;
+				if(key_set){
+					mode = 1;
+				}
 			}
 
-			if(key_heat_2){
-				heat_2_flag = !heat_2_flag;
+			if(key_heat_2!= key_heat_2_buf){
+				key_heat_2_buf = key_heat_2;
+				if(key_heat_2){
+					key_heat_2_flag = 1;
+				}
+				else{
+
+				}
 			}
+			else if(key_heat_2_flag && key_heat_2_time >= 10 ){
+				mode = sunday_mode;
+				key_heat_2_flag = 0;
+				key_heat_2 = 0 ;
+				key_heat_2_buf = 0;
+			}
+			
+			
+
 
 			//enter sunday mode
 			
@@ -347,6 +363,7 @@ void key_process(){
 			key_heat_up = 0;
 	
 			//key to quit sunday_mode
+
 		 
 		default:
 			mode = 0;
@@ -358,7 +375,19 @@ void key_process(){
 
 
 void __attribute((interrupt(0x08))) ISR_tmr0 (void){
-	timer_count
+	static unsigned char time_count = 0;
+	time_count ++;
+	if(time_count >= 250){
+		time_count = 0;
+		blink_flag = ~blink_flag;
+		if(key_heat_flag){
+			key_heat_2_time++;
+		}
+		else{
+			key_heat_2_time = 0;
+		}
+	}
+
 }
 
 void __attribute((interrupt(0x0C))) ISR_adc (void){
